@@ -11,11 +11,19 @@
             <h2>Will Otterbein, COMP4537, Lab 0</h2>
             <p>Test your memory by clicking on the buttons in the correct order you are shown.</p>
         </header>
-        <script src="./js/index.js"></script>
+        <hr />
+        <form id="numberForm">
+            <label for="inumber">Input Number</label>
+            <br />
+            <input id="inumber" name="inumber" type="number" min="3" max="7" />
+            <input name="startGame" type="submit" value="Go!" />
+        </form>
+        <hr />
         <footer>
             <p>Will Otterbein</p> 
             <p>COMP4537 Lab 0</p>
             <p>2025</p>
         </footer>
+        <script src="./js/Controller.js"></script>
     </body>
 </html>
