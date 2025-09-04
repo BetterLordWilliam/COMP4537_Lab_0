@@ -1,15 +1,26 @@
-class Controller {
-    constructor() {
-        console.log('New instance of Controller created');
-        this.form = document.querySelector('#numberForm');
+import { messages } from '/lab0/lang/en/user.js';
+import { Game } from '/lab0/js/Game.js';
 
-        // Add event listeners
+class IndexController {
+
+    constructor() {
+        this.startGameForm = document.querySelector('#startGameForm');
+        this.inputNumber = document.querySelector('#startGameInumber');
+        this.startGameButton = document.querySelector('#startGame');
+
+        this.startGameForm.addEventListener('submit', (e) => this.startGame(e));
     }
 
     startGame(e) {
-        console.log('We are starting the game!');
-        console.log(e);
+        e.preventDefault();
+
+        console.log(this.inputNumber.value);
+        // Annoying
+        // alert(messages.test);
+
+        this.game = new Game();
+        this.game.startGame(this.inputNumber.value);
     }
 }
 
-export const controller = new Controller();
+export const controller = new IndexController();
